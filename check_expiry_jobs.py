@@ -12,7 +12,7 @@ def db_connection():
 	query = "SELECT OnlineApplicationAddress FROM JobOrder JO WHERE JO.TenantId =1377 AND JO.OnlineApplicationAddress Is Not Null AND JO.ExternalOrganization != ' '"
 	result = connection.execute(query)
 	for row in result:
-		for url in row:
+		for url in row[:5]:
 			print(url)
 			response = requests.get(url, verify = True)
 			# print(response)
