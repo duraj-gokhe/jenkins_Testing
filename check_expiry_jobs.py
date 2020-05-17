@@ -15,5 +15,5 @@ def db_connection():
 		for url in row:
 			print(url)
 			response = requests.get(url, verify = True)
-			print(response)
+			# print(response)
 db_connection()
