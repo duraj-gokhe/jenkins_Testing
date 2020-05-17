@@ -11,7 +11,7 @@ def db_connection():
 	connection = engine.connect()
 	query = "SELECT OnlineApplicationAddress FROM JobOrder JO WHERE JO.TenantId =1377 AND JO.OnlineApplicationAddress Is Not Null AND JO.ExternalOrganization != ' '"
 	result = connection.execute(query)
-	for row in result[:5]:
+	for row in result:
 		for url in row:
 			print(url)
 			response = requests.get(url, verify = True)
